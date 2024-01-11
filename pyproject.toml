@@ -1,0 +1,87 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Impacta-Health"
+version = "1.0"
+dependencies = [
+  "boto3",
+  "Collectfast",
+  "Django",
+  "dj-database-url",
+  "django-cleanup",
+  "django-cors-headers",
+  "django-extensions",
+  "django-storages",
+  "gunicorn",
+  "httpx",
+  "Pillow",
+  "pytz",
+  "psycopg2-binary",
+  "python-decouple",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "coverage",
+  "isort",
+  "Faker",
+  "factory-boy",
+  "flake8",
+  "pylint-django",
+  "pytest",
+  "pytest-cov",
+  "pytest-django",
+  "Flake8-pyproject",
+]
+
+[tool.pip-tools]
+generate-hashes = true
+
+# ---- Development tools config ----
+
+[tool.flake8]
+max-line-length = 120
+exclude = [
+    ".venv",
+    "venv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".tox",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+]
+select = "C,E,F,W,B,B950"
+extend-ignore = "E203, F403, F405, E501, E722, F631, W503"
+
+[tool.isort]
+skip = [
+    ".env/",
+    ".venv/",
+    "venv",
+]
+multi_line_output = 3
+skip_glob = "**/migrations/*.py"
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+
+[tool.black]
+line-length = 120
+target-version = ['py37']
+include = '\.pyi?$'
+extend-exclude = '''
+  .*_pb2.py
+  | \.venv/
+  | venv/
+  | migrations/
+'''
+
+[tool.pytest]
+filterwarnings = "ignore::pytest.PytestAssertRewriteWarning"
