@@ -20,13 +20,8 @@ environments.
 
 ### Contributors &nbsp; ![GitHub Profile](https://user-images.githubusercontent.com/76751870/153108542-62e0a78a-95f1-4935-ae89-6062186153c5.png)
 
-- [Felipe Guimarães](https://github.com/Felipe007Guimaraes)
-- [Gabriel França](https://github.com/change-me)
-- [Guilherme da Costa Olegario](https://github.com/sullyanoo)
-- [Michele Souza Santana](https://github.com/change-me)
-- [Ronaldo Soares Filho](https://github.com/change-me)
-- [Rogerio da Silva Junior](https://github.com/Change-me)
-- [Rodrigo Usuy](https://github.com/rousuy)
+
+- [Luciano Guilherme da Costa Olegario](https://github.com/sullyanoo)
 
 ### Tools
 
