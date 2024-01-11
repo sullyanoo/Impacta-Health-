@@ -1,0 +1,495 @@
+[
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add log entry",
+			"content_type": ["admin", "logentry"],
+			"codename": "add_logentry"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change log entry",
+			"content_type": ["admin", "logentry"],
+			"codename": "change_logentry"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete log entry",
+			"content_type": ["admin", "logentry"],
+			"codename": "delete_logentry"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view log entry",
+			"content_type": ["admin", "logentry"],
+			"codename": "view_logentry"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add permission",
+			"content_type": ["auth", "permission"],
+			"codename": "add_permission"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change permission",
+			"content_type": ["auth", "permission"],
+			"codename": "change_permission"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete permission",
+			"content_type": ["auth", "permission"],
+			"codename": "delete_permission"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view permission",
+			"content_type": ["auth", "permission"],
+			"codename": "view_permission"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add group",
+			"content_type": ["auth", "group"],
+			"codename": "add_group"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change group",
+			"content_type": ["auth", "group"],
+			"codename": "change_group"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete group",
+			"content_type": ["auth", "group"],
+			"codename": "delete_group"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view group",
+			"content_type": ["auth", "group"],
+			"codename": "view_group"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add content type",
+			"content_type": ["contenttypes", "contenttype"],
+			"codename": "add_contenttype"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change content type",
+			"content_type": ["contenttypes", "contenttype"],
+			"codename": "change_contenttype"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete content type",
+			"content_type": ["contenttypes", "contenttype"],
+			"codename": "delete_contenttype"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view content type",
+			"content_type": ["contenttypes", "contenttype"],
+			"codename": "view_contenttype"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add session",
+			"content_type": ["sessions", "session"],
+			"codename": "add_session"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change session",
+			"content_type": ["sessions", "session"],
+			"codename": "change_session"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete session",
+			"content_type": ["sessions", "session"],
+			"codename": "delete_session"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view session",
+			"content_type": ["sessions", "session"],
+			"codename": "view_session"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add user",
+			"content_type": ["users", "user"],
+			"codename": "add_user"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change user",
+			"content_type": ["users", "user"],
+			"codename": "change_user"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete user",
+			"content_type": ["users", "user"],
+			"codename": "delete_user"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view user",
+			"content_type": ["users", "user"],
+			"codename": "view_user"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add user",
+			"content_type": ["users", "doctoruser"],
+			"codename": "add_doctoruser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change user",
+			"content_type": ["users", "doctoruser"],
+			"codename": "change_doctoruser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete user",
+			"content_type": ["users", "doctoruser"],
+			"codename": "delete_doctoruser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view user",
+			"content_type": ["users", "doctoruser"],
+			"codename": "view_doctoruser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add user",
+			"content_type": ["users", "patientuser"],
+			"codename": "add_patientuser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change user",
+			"content_type": ["users", "patientuser"],
+			"codename": "change_patientuser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete user",
+			"content_type": ["users", "patientuser"],
+			"codename": "delete_patientuser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view user",
+			"content_type": ["users", "patientuser"],
+			"codename": "view_patientuser"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add patient user profile",
+			"content_type": ["users", "patientuserprofile"],
+			"codename": "add_patientuserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change patient user profile",
+			"content_type": ["users", "patientuserprofile"],
+			"codename": "change_patientuserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete patient user profile",
+			"content_type": ["users", "patientuserprofile"],
+			"codename": "delete_patientuserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view patient user profile",
+			"content_type": ["users", "patientuserprofile"],
+			"codename": "view_patientuserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add doctor user profile",
+			"content_type": ["users", "doctoruserprofile"],
+			"codename": "add_doctoruserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change doctor user profile",
+			"content_type": ["users", "doctoruserprofile"],
+			"codename": "change_doctoruserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete doctor user profile",
+			"content_type": ["users", "doctoruserprofile"],
+			"codename": "delete_doctoruserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view doctor user profile",
+			"content_type": ["users", "doctoruserprofile"],
+			"codename": "view_doctoruserprofile"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can add appointment",
+			"content_type": ["appointments", "appointment"],
+			"codename": "add_appointment"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can change appointment",
+			"content_type": ["appointments", "appointment"],
+			"codename": "change_appointment"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can delete appointment",
+			"content_type": ["appointments", "appointment"],
+			"codename": "delete_appointment"
+		}
+	},
+	{
+		"model": "auth.permission",
+		"fields": {
+			"name": "Can view appointment",
+			"content_type": ["appointments", "appointment"],
+			"codename": "view_appointment"
+		}
+	},
+	{ "model": "auth.group", "fields": { "name": "ADMIN", "permissions": [] } },
+	{ "model": "auth.group", "fields": { "name": "DOCTOR", "permissions": [] } },
+	{
+		"model": "users.user",
+		"fields": {
+			"password": "pbkdf2_sha256$600000$FLTmsW5xhEwuakcJe2oiGU$bXyLFgiwE+xL0O49+M1RuaQRCKefOStV/8UpV3uVozw=",
+			"last_login": null,
+			"is_superuser": true,
+			"first_name": "Admin",
+			"last_name": "User",
+			"is_staff": true,
+			"is_active": true,
+			"date_joined": "2023-10-09T23:57:40.458Z",
+			"username": "admin",
+			"email": "admin@admin.com",
+			"role": "ADMIN",
+			"updated_at": "2023-10-09T23:57:40.755Z",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "users.user",
+		"fields": {
+			"password": "12345678",
+			"last_login": null,
+			"is_superuser": false,
+			"first_name": "Mirazul",
+			"last_name": "Alom",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2023-10-10T01:02:34Z",
+			"username": "mirazul_alom",
+			"email": "mirazul@impacta.health.com",
+			"role": "DOCTOR",
+			"updated_at": "2023-10-10T01:03:32.755Z",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "users.user",
+		"fields": {
+			"password": "12345678",
+			"last_login": null,
+			"is_superuser": false,
+			"first_name": "Frederick",
+			"last_name": "Manson",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2023-10-10T01:03:47Z",
+			"username": "manson",
+			"email": "manson@impacta.health.com",
+			"role": "DOCTOR",
+			"updated_at": "2023-10-10T01:04:53.384Z",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "users.user",
+		"fields": {
+			"password": "12345678",
+			"last_login": null,
+			"is_superuser": false,
+			"first_name": "Anna",
+			"last_name": "Bacal",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2023-10-10T01:04:57Z",
+			"username": "anna_bacal",
+			"email": "anna@impacta.health.com",
+			"role": "DOCTOR",
+			"updated_at": "2023-10-10T01:05:46.602Z",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "users.user",
+		"fields": {
+			"password": "12345678",
+			"last_login": null,
+			"is_superuser": false,
+			"first_name": "Alexandre",
+			"last_name": "Kobashi",
+			"is_staff": false,
+			"is_active": true,
+			"date_joined": "2023-10-10T01:05:57Z",
+			"username": "alexandre",
+			"email": "kobashi@impacta.health.com",
+			"role": "DOCTOR",
+			"updated_at": "2023-10-10T01:07:16.218Z",
+			"groups": [],
+			"user_permissions": []
+		}
+	},
+	{
+		"model": "users.doctoruserprofile",
+		"pk": 1,
+		"fields": {
+			"user": ["mirazul_alom"],
+			"date_of_birth": "1975-03-30",
+			"avatar": "users/avatars/c2388a28-09aa-4700-a898-8d1007b3c600-mirazul_alom-perts1.png",
+			"updated_at": "2023-10-10T02:01:42.175Z",
+			"crm": "56789012341234"
+		}
+	},
+	{
+		"model": "users.doctoruserprofile",
+		"pk": 2,
+		"fields": {
+			"user": ["manson"],
+			"date_of_birth": "1979-12-04",
+			"avatar": "users/avatars/2b1c7450-fbfa-46e4-a3ca-58bf1cc24137-manson-perts2.png",
+			"updated_at": "2023-10-10T01:59:38.743Z",
+			"crm": "12345678901234"
+		}
+	},
+	{
+		"model": "users.doctoruserprofile",
+		"pk": 3,
+		"fields": {
+			"user": ["anna_bacal"],
+			"date_of_birth": "1982-07-23",
+			"avatar": "users/avatars/1cb2c2f3-5ff5-4de7-968f-fb60d99c0302-anna_bacal-perts3.png",
+			"updated_at": "2023-10-10T01:59:19.579Z",
+			"crm": "98765432101234"
+		}
+	},
+	{
+		"model": "users.doctoruserprofile",
+		"pk": 4,
+		"fields": {
+			"user": ["alexandre"],
+			"date_of_birth": "1993-03-15",
+			"avatar": "users/avatars/584bf545-e613-44a7-9406-d28f72af3977-alexandre-perts4.png",
+			"updated_at": "2023-10-10T01:58:58.361Z",
+			"crm": "48569327012874"
+		}
+	}
+]

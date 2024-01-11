@@ -1,0 +1,53 @@
+.form-control{
+
+    padding-left: 40px;
+    align-items: center;
+    display: block; /* Necessário para o margin funcionar */
+     margin-left: auto; /* aqui */
+    margin-right: auto; /* e aqui */
+    border: 5px;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+
+}
+
+.imputName{
+  border: 20px;
+  border-radius: 4px;
+  background-color: #f1f1f1
+
+}
+
+.btn-primary{
+    margin-left: auto; /* aqui */
+    margin-right: auto; /* e aqui */
+}
+
+.form-select{
+    width: 0%;
+    width: 20%;
+    padding-left: 0x;
+    padding-left: 20;
+  align-items: center;
+    display: block; /* Necessário para o margin funcionar */
+     margin-left: auto; /* aqui */
+    margin-right: auto; /* e aqui */
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+.form-group{
+    padding-left: 40px;
+    display: block; /* Necessário para o margin funcionar */
+    margin-left: auto; /* aqui */
+    margin-right: auto; /* e aqui */
+    border: none;
+
+}
+.título{
+  display: block; /* Necessário para o margin funcionar */
+  margin-left: auto; /* aqui */
+  margin-right: auto; /* e aqui */
+  align-items: center;
+}

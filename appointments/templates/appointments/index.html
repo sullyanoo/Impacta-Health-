@@ -1,0 +1,604 @@
+{% load static%}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Impacta Health</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- Awesome Free Library-->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css"
+        integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <!-- CSS here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific.css' %}">
+    <link rel="stylesheet" href="{% static 'css/awesome.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themifyicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <!-- DevExtreme theme -->
+    <link rel="stylesheet" href="https://cdn3.devexpress.com/jslib/23.1.5/css/dx.light.css">
+
+    <!-- DevExtreme library -->
+    <script type="text/javascript" src="https://cdn3.devexpress.com/jslib/23.1.5/js/dx.all.js"></script>
+    <!-- Library Font Awesome-->
+    <script src="https://kit.fontawesome.com/a42fb6df6b.js" crossorigin="anonymous"></script>
+    <!-- Library Bootstrap Js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-6 ">
+                            <div class="social_media_links">
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6">
+                            <div class="short_contact_list">
+                                <ul>
+                                    <li><a href="#"> <i class="fa fa-envelope"></i>impactahealth@gmail.com</a></li>
+                                    <li><a href="#"> <i class="fa-solid fa-headphones"></i>(11)5547-0727</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-2">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="{% static 'img/logo.png'%}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-7">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="/">Início</a></li>
+                                        <li><a href="Department.html">Departamento</a></li>
+                                        <li><a href="Doctors.html">Médicos</a></li>
+                                        <li><a href="contact.html">Contato</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                {% if request.user.is_authenticated %}
+                                <div class="book_btn d-none d-lg-block">
+                                    <a href="{% url 'appointments:list' %}">Acessar Conta</a>
+                                </div>
+                                {% else %}
+                                <div class="book_btn d-none d-lg-block">
+                                    <a href="{% url 'users:login' %}">Acessar Conta</a>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- slider_area_start -->
+    <div class="slider_area">
+        <div class="slider_active owl-carousel">
+            <div class="single_slider  d-flex align-items-center slider_bg_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> <span>Assistência médica</span> <br>
+                                    Para a família inteira </h3>
+                                <p>No setor de saúde, a excelência no atendimento é a facilidade do hospital como
+                                    prestador de serviços de saúde de forma consistente.</p>
+                                <a href="{% url 'users:patient-signup' %}" class="boxed-btn3"> Realizer Cadastro </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> <span>Total Autonomia</span> <br>
+                                    no reagendamento </h3>
+                                <p>Na Impacta Health, você pode optar pelas clínicas mais próximas de você! </p>
+                                <a href="appointments/reschedule.html" class="boxed-btn3">Reagendar consulta</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single_slider  d-flex align-items-center slider_bg_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="slider_text ">
+                                <h3> <span>Contamos com uma equipe</span> <br>
+                                    extremamente capacitada</h3>
+                                <p>Na Impacta Health nos preocupamos com a excelência em nosssos atendimentos e no bem
+                                    estar dos nossos pacientes.</p>
+                                <a href="appointments/schedule.html" class="boxed-btn3">Agendar consulta</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- service_area_start -->
+    <div class="service_area">
+        <div class="container p-0">
+            <div class="row no-gutters">
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_service">
+                        <div class="icon">
+                            <i class="fa-solid fa-stethoscope"></i>
+                        </div>
+                        <h3>Hospitalidade</h3>
+                        <p>A excelência clínica deve ser a prioridade de qualquer prestador de serviços de saúde.</p>
+                        <a href="#" class="boxed-btn3-white">Solicitar Leito</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_service">
+                        <div class="icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <h3>Cuidado Emergêncial</h3>
+                        <p>Possuímos equipamentos médicos com técnologia de ponta e uma equipe de prontidão 24 Horas por
+                            dia.</p>
+                        <a href="#" class="boxed-btn3-white">+10 672 356 3567</a>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4">
+                    <div class="single_service">
+                        <div class="icon">
+                            <i class="fa-solid fa-crutch"></i>
+                        </div>
+                        <h3>Exames Laboratoriais</h3>
+                        <p>Descontos exclusivos para seus exames.</p>
+                        <a href="#" class="boxed-btn3-white">Agendar Exames</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- service_area_end -->
+
+    <!-- welcome_docmed_area_start -->
+    <div class="welcome_docmed_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{% static 'img/1.png'%}" alt="">
+                        </div><br><br>
+                        <div class="thumb_2">
+                            <img src="{% static 'img/2.png'%}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    <div class="welcome_docmed_info">
+                        <h2>Bem vindo à Impacta Health</h2>
+                        <h3>O melhor cuidado para você.</h3>
+                        <p>Nossa missão é fornecer serviços de qualidade. Somos a mais moderna plataforma de serviços
+                            que está revolucionando a forma de cuidar da saúde
+                            .</p>
+                        <ul>
+                            <li> <i class="fa-solid fa-user-doctor"></i>Acompanhamento On-line.</li>
+                            <li> <i class="fa-solid fa-receipt"></i>Aceitamos qualquer plano de saúde.</li>
+                            <li> <i class="fa-solid fa-tablets"></i>Possuímos parcerias com diversas farmácias, afim de
+                                facilitar a obtenção de suas medicações. </li>
+                        </ul>
+                        <a href="#" class="boxed-btn3-white-2">Leia mais</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- welcome_docmed_area_end -->
+
+    <!-- offers_area_start -->
+    <div class="our_department_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-55">
+                        <h3>Nossas Especialidades</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_department">
+                        <div class="department_thumb">
+                            <img src="img/department/1.png" alt="">
+                        </div>
+                        <div class="department_content">
+                            <i class="fa-solid fa-eye"></i>
+                            <h3><a href="#">Oftalmologista</a></h3>
+                            <p>Equipamentos oftalmológicos para
+                                diagnósticos precisos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_department">
+                        <div class="department_thumb"></div>
+                        <div class="department_content">
+                            <i class="fa-solid fa-brain"></i>
+                            <h3><a href="#">Psicologia</a></h3>
+                            <p>Os psicólogos são criteriosamente selecionados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_department">
+                        <div class="department_thumb">
+                            <img src="img/department/3.png" alt="">
+                        </div>
+                        <div class="department_content">
+                            <i class="fa-solid fa-tooth"></i>
+                            <h3><a href="#">Odontologia</a></h3>
+                            <p>Os planos oferecidos possuem uma ampla rede credenciada. Você terá atendimento em
+                                qualquer lugar do Brasil.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_department">
+                        <div class="department_thumb">
+                            <img src="img/department/4.png" alt="">
+                        </div>
+                        <div class="department_content">
+                            <i class="fa-solid fa-clipboard-user"></i>
+                            <h3><a href="#">Diagnósticos</a></h3>
+                            <p>Com todo o cuidado, dedicação e profissionalismo.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_department">
+                        <div class="department_thumb">
+                            <img src="img/department/5.png" alt="">
+                        </div>
+                        <div class="department_content">
+                            <i class="fa-solid fa-head-side-mask"></i>
+                            <h3><a href="#">Cirurgias</a></h3>
+                            <p>Nosso corpo clínico interdisciplinar trabalha de forma integrada para oferecer o melhor
+                                para nossos pacientes.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6 col-lg-4">
+                    <div class="single_department">
+                        <div class="department_thumb">
+                            <img src="img/department/6.png" alt="">
+                        </div>
+                        <div class="department_content">
+                            <i class="fa-solid fa-house-chimney-medical"></i>
+                            <h3><a href="#">Atendimentos à domicílio</a></h3>
+                            <p>Atendimento de ponta, a onde quer que você esteja.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offers_area_end -->
+
+    <!-- testmonial_area_start -->
+    <div class="testmonial_area">
+        <div class="testmonial_active owl-carousel">
+            <div class="single-testmonial testmonial_bg_1 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1">
+                            <div class="testmonial_info text-center">
+                                <div class="quote">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                    <h3>Depoimento
+                                        de quem confia!</h3>
+                                </div>
+                                <p>"Toda a equipe médica é totalmente competente e são excelentes profissionais, indico
+                                    para todo mundo. A recuperação da sirurgias que fiz tem evoluído bastante. Não abro
+                                    mão." <br>
+                                    Maria Eugênia.
+                                    <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-testmonial testmonial_bg_2 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1">
+                            <div class="testmonial_info text-center">
+                                <div class="quote">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                    <h3>Depoimento
+                                        de quem confia!</h3>
+                                </div>
+                                <p>"Todos muito educados, atenciosos e profissionais. Tenho muito respeito por toda a
+                                    equipe, só tenho elogios e muito à agradecer."<br>
+                                    Newton Herrera Feitosa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="single-testmonial testmonial_bg_1 overlay2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-10 offset-xl-1">
+                            <div class="testmonial_info text-center">
+                                <div class="quote">
+                                    <i class="fa-solid fa-quote-left"></i>
+                                    <h3>Depoimento
+                                        de quem confia!</h3>
+                                </div>
+                                <p>"O acolhimento, cuidado, atenção, carinho e pronto atendimento, não é apenas um
+                                    hospital, é um lar! Já era fã, agora então, nem se fala!"<br>
+                                    Graciela da Cunha</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- expert_doctors_area_start -->
+    <div class="expert_doctors_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="doctors_title mb-55">
+                        <h3>Médicos Especializados</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="expert_active owl-carousel">
+                        <div class="single_expert">
+                            <div class="expert_thumb">
+                                <img src="{% static 'img/experts1.png'%}" alt="">
+                            </div>
+                            <div class="experts_name text-center">
+                                <h3>Mirazul Alom</h3>
+                                <span>Neurologista</span>
+                            </div>
+                        </div>
+                        <div class="single_expert">
+                            <div class="expert_thumb">
+                                <img src="{% static 'img/experts2.png'%}" alt="">
+                            </div>
+                            <div class="experts_name text-center">
+                                <h3>Frederick Manson</h3>
+                                <span>Odontologista</span>
+                            </div>
+                        </div>
+                        <div class="single_expert">
+                            <div class="expert_thumb">
+                                <img src="{% static 'img/experts3.png'%}" alt="">
+                            </div>
+                            <div class="experts_name text-center">
+                                <h3>Anna Bacal</h3>
+                                <span>Clinico Geral</span>
+                            </div>
+                        </div>
+                        <div class="single_expert">
+                            <div class="expert_thumb">
+                                <img src="{% static 'img/experts4.png'%}" alt="">
+                            </div>
+                            <div class="experts_name text-center">
+                                <h3>Alexandre Kobashi</h3>
+                                <span>Oftalmologista</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <!-- expert_doctors_area_end -->
+
+    <!-- Emergency_contact start -->
+    <div class="Emergency_contact">
+        <div class="conatiner-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-xl-6">
+                    <div
+                        class="single_emergency d-flex align-items-center justify-content-center emergency_bg_1 overlay_skyblue">
+                        <div class="info">
+                            <h3>Contato Emergêncial</h3>
+                        </div>
+                        <div class="info_button">
+                            <a href="#" class="boxed-btn3-white">+10 378 4673 467</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6">
+                    <div
+                        class="single_emergency d-flex align-items-center justify-content-center emergency_bg_2 overlay_skyblue">
+                        <div class="info">
+                            <h3>Realize Seu Cadastro Para Uma Melhor Imersão</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Emergency_contact end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+        {% include 'partials/footer.html' %}
+    </footer>
+    <!-- footer end  -->
+    <!-- link that opens popup -->
+
+    <!-- form itself end-->
+    <form id="test-form" class="white-popup-block mfp-hide">
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <h3>Make an Appointment</h3>
+                <form action="#">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <input id="datepicker" placeholder="Pick date">
+                        </div>
+                        <div class="col-xl-6">
+                            <input id="datepicker2" placeholder="Suitable time">
+                        </div>
+                        <div class="col-xl-6">
+                            <select class="form-select wide" id="default-select" class="">
+                                <option data-display="Select Department">Department</option>
+                                <option value="1">Eye Care</option>
+                                <option value="2">Physical Therapy</option>
+                                <option value="3">Dental Care</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-6">
+                            <select class="form-select wide" id="default-select" class="">
+                                <option data-display="Doctors">Doctors</option>
+                                <option value="1">Mirazul Alom</option>
+                                <option value="2">Monzul Alom</option>
+                                <option value="3">Azizul Isalm</option>
+                            </select>
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text" placeholder="Name">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text" placeholder="Phone no.">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="boxed-btn3">Confirm</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </form>
+    <!-- form itself end -->
+
+    <!-- JS here -->
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/carousel.js'%}"></script>
+    <script src="{% static 'js/isotope.js' %}"></script>
+    <script src="{% static 'js/ajaxform.js' %}"></script>
+    <script src="{% static 'js/waypoints.js' %}"></script>
+    <script src="{% static 'js/jquerycounterup.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.js' %}"></script>
+    <script src="{% static 'js/scrollIt.js' %}"></script>
+    <script src="{% static 'js/scrollUp.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/select.js' %}"></script>
+    <script src="{% static 'js/slicknav.js' %}"></script>
+    <script src="{% static 'js/magnific.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/gijgo.js' %}"></script>
+    <!--contact js-->
+    <script src="{% static 'js/contact.js' %}"></script>
+    <script src="{% static 'js/ajaxchimp.js' %}"></script>
+    <script src="{% static 'js/form.js' %}"></script>
+    <script src="{% static 'js/validate.js' %}"></script>
+    <script src="{% static 'js/mailscript.js' %}"></script>
+
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+
+        $("#active")({
+            function() {
+                window.location.reload();
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2();
+        });
+    </script>
+</body>
+
+</html>
