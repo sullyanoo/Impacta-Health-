@@ -1,0 +1,23 @@
+DEBUG = True
+
+SECRET_KEY=difine your secret key
+ALLOWED_HOSTS=localhost, 127.0.0.1
+
+# Data base config
+DB_NAME=impacta-health-dev
+DB_USER=postgres
+DB_PASSWORD=postgres
+DB_HOST=impacta_db
+DB_PORT=5432
+
+# Mail server config
+EMAIL_HOST=mailhog
+DOMAIN=localhost:8000
+EMAIL_PORT=8025
+
+# S3 storage config
+S3_ACCESS_KEY = 
+S3_SECRET_KEY =
+S3_BUCKET =
+S3_ENDPOINT = 
+

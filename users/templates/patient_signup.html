@@ -1,0 +1,221 @@
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realize seu Cadastro</title>
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/form.css' %}">
+  <link rel="stylesheet" href="{% static 'css/themifyicons.css' %}">
+  <style>
+    .error-field {
+      border-color: red;
+    }
+
+    .error-message {
+      color: red;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <script src="https://kit.fontawesome.com/a42fb6df6b.js" crossorigin="anonymous"></script>
+    <!-- Library Bootstrap Js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <!-- header-start -->
+  <header>
+    {% include 'partials/header.html' %}
+  </header>
+  <main>
+    <div class="registration-form">
+      <h2>Registro de Usuário</h2>
+      <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <input type="text" name="{{ form.username.name }}" id="{{ form.username.id_for_label }}"
+            placeholder="Seu nome de usuário">
+          <div class="error-message username-feedback"></div>
+        </div>
+        <div class="form-group">
+          <input type="text" name="{{ form.first_name.name }}" id="{{ form.first_name.id_for_label }}"
+            placeholder="Seu primeiro nome">
+        </div>
+        <div class="form-group">
+          <input type="text" name="{{ form.last_name.name }}" id="{{ form.last_name.id_for_label }}"
+            placeholder="Seu sobrenome">
+        </div>
+        <div class="form-group">
+          <input type="email" name="{{ form.email.name }}" id="{{ form.email.id_for_label }}"
+            placeholder="Seu endereço de email">
+          <div class="error-message email-feedback"></div>
+        </div>
+        <div class="form-group">
+          <input type="password" name="{{ form.password1.name }}" id="{{ form.password1.id_for_label }}"
+            placeholder="Sua senha">
+        </div>
+        <div class="form-group">
+          <input type="password" name="{{ form.password2.name }}" id="{{ form.password2.id_for_label }}"
+            placeholder="Confirme sua senha">
+          <div class="error-message password-feedback"></div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="boxed-btn3"> Confirmar </button>
+        </div>
+      </form>
+    </div><br><br><br><br>
+  </main>
+  <footer class="footer">
+    {% include 'partials/footer.html' %}
+  </footer>
+</body>
+
+</html>
+{% endblock %}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+<script>
+  $(document).ready(function () {
+    var usernameField = $('#{{ form.username.id_for_label }}');
+    var emailField = $('#{{ form.email.id_for_label }}');
+    var passwordField1 = $('#{{ form.password1.id_for_label }}');
+    var passwordField2 = $('#{{ form.password2.id_for_label }}');
+    var firstNameField = $('#{{ form.first_name.id_for_label }}');
+    var lastNameField = $('#{{ form.last_name.id_for_label }}');
+
+    function showFeedback(element, message) {
+      element.text(message).fadeIn();
+    }
+    function hideFeedback(element) {
+      element.fadeOut();
+    }
+    function handleFieldInput(field, feedbackElement, validationUrl, successCallback) {
+      field.on('input', _.debounce(function () {
+        var value = field.val();
+
+        if (value.trim() !== '') {
+          $.ajax({
+            url: validationUrl,
+            type: 'POST',
+            data: { [field.attr('name')]: value },
+            success: function (response) {
+              if (successCallback) {
+                successCallback(response, feedbackElement);
+              }
+            },
+            error: function (xhr, textStatus, errorThrown) {
+              if (xhr.status === 400) {
+                showFeedback(feedbackElement, xhr.responseJSON[field.attr('name')][0]);
+              }
+            }
+          });
+        } else {
+          hideFeedback(feedbackElement);
+        }
+      }, 1000));
+    }
+    function markFieldAsError(field) {
+      field.addClass('error-field');
+      field.next('.error-message').text('Este campo é obrigatório.').fadeIn();
+    }
+    function clearFieldError(field) {
+      field.removeClass('error-field');
+      field.next('.error-message').text('').fadeOut();
+    }
+    handleFieldInput(usernameField, $('.username-feedback'), '{% url "users:signup-verify" %}', function (response, feedbackElement) {
+      if (response.username_exists) {
+        showFeedback(feedbackElement, 'Username already exists.');
+      } else {
+        hideFeedback(feedbackElement);
+      }
+
+      if (response.username_error) {
+        showFeedback(feedbackElement, response.username_error);
+      }
+    });
+    handleFieldInput(emailField, $('.email-feedback'), '{% url "users:signup-verify" %}', function (response, feedbackElement) {
+      if (response.email_exists) {
+        showFeedback(feedbackElement, 'Email already exists.');
+      } else {
+        hideFeedback(feedbackElement);
+      }
+
+      if (response.email_error) {
+        showFeedback(feedbackElement, response.email_error);
+      }
+    });
+    passwordField2.on('input', function () {
+      var password1 = passwordField1.val();
+      var password2 = passwordField2.val();
+
+      if (password2.trim() !== '') {
+        if (password1 !== password2) {
+          showFeedback($('.password-feedback'), 'Passwords do not match.');
+        } else {
+          hideFeedback($('.password-feedback'));
+        }
+      } else {
+        hideFeedback($('.password-feedback'));
+        markFieldAsError(passwordField2);
+        shakeFieldWithError(passwordField2);
+      }
+    });
+    var form = $('form');
+    form.on('submit', function (e) {
+      var isValid = true;
+      function shakeFieldWithError(field) {
+        field.addClass('error-field error-shake');
+      }
+      form.find('.invalid-feedback').each(function () {
+        var feedbackElement = $(this);
+        var field = feedbackElement.siblings('input');
+        if (feedbackElement.is(':visible')) {
+          isValid = false;
+          markFieldAsError(field);
+          shakeFieldWithError(field);
+        } else {
+          clearFieldError(field);
+        }
+      });
+      form.find('input').each(function () {
+        var inputField = $(this);
+        if (inputField.val().trim() === '') {
+          isValid = false;
+          markFieldAsError(inputField);
+          shakeFieldWithError(inputField);
+        } else {
+          clearFieldError(inputField);
+        }
+      });
+      if (firstNameField.val().trim() === '') {
+        isValid = false;
+        markFieldAsError(firstNameField);
+        shakeFieldWithError(firstNameField);
+      } else {
+        clearFieldError(firstNameField);
+      }
+
+      if (lastNameField.val().trim() === '') {
+        isValid = false;
+        markFieldAsError(lastNameField);
+        shakeFieldWithError(lastNameField);
+      } else {
+        clearFieldError(lastNameField);
+      }
+      if (!isValid) {
+        e.preventDefault();
+        setTimeout(function () {
+          form.find('.error-shake').removeClass('error-shake');
+        }, 1000);
+      }
+    });
+  });
+</script>

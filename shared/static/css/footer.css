@@ -1,0 +1,46 @@
+/* footer.css */
+.footer_top {
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    /* Reduzindo a altura superior e inferior para 20px */
+}
+
+.footer_logo img {
+    max-width: 150px;
+    height: auto;
+}
+
+.social_links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social_links ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.social_links ul li:last-child {
+    margin-right: 0;
+}
+
+.social_links a {
+    color: #333;
+    font-size: 20px;
+}
+
+.social_links a:hover {
+    color: #007bff;
+}
+
+.footer_widget p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.footer_widget address {
+    margin-top: 10px;
+    /* Reduzindo a margem superior para 10px */
+    font-size: 14px;
+}

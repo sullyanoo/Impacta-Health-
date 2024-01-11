@@ -1,0 +1,111 @@
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themifyicons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+
+<body>
+    <script src="https://kit.fontawesome.com/a42fb6df6b.js" crossorigin="anonymous"></script>
+    <!-- Library Bootstrap Js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <!-- header-start -->
+    <header>
+        {% include 'partials/header.html' %}
+    </header>
+    <main>
+        <div class="registration-form">
+            <h2>Acesse sua Conta</h2>
+            <form method="post" id="login-form" action="{% url 'users:login-verify' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input type="text" name="username" id="id_username" placeholder="Seu nome de usuário">
+                    <div class="error-feedback username-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" id="id_password" placeholder="Sua senha">
+                    <div class="error-feedback password-feedback"></div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="boxed-btn3">Login</button>
+                </div>
+            </form>
+            <p class="small-text">Não possui uma conta? <a href="{% url 'users:patient-signup' %}"
+                    class="signup-link">Cadastre-se aqui</a>.</p>
+        </div>
+    </main>
+    <footer class="footer">
+        {% include 'partials/footer.html' %}
+    </footer>
+</body>
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var form = $('#login-form');
+        var usernameField = $('#id_username');
+        var passwordField = $('#id_password');
+
+        function showFeedback(element, message) {
+            element.text(message).fadeIn();
+        }
+        function clearFeedback(element) {
+            element.text('').fadeOut();
+        }
+
+        form.on('submit', function (e) {
+            e.preventDefault();
+
+            var username = usernameField.val();
+            var password = passwordField.val();
+
+            if (username.trim() === '') {
+                showFeedback($('.username-feedback'), 'Nome de usuário é obrigatório.');
+                usernameField.addClass('error-field');
+                return;
+            }
+
+            if (password.trim() === '') {
+                showFeedback($('.password-feedback'), 'Senha é obrigatória.');
+                passwordField.addClass('error-field');
+                return;
+            }
+
+            $.ajax({
+                url: form.attr('action'),
+                method: 'POST',
+                data: {
+                    'csrfmiddlewaretoken': form.find('input[name="csrfmiddlewaretoken"]').val(),
+                    'username': username,
+                    'password': password
+                },
+                success: function (response) {
+                    if (response.success) {
+                        window.location.href = "{% url 'appointments:list' %}";
+                    } else {
+                        showFeedback($('.password-feedback'), 'Nome de usuário ou senha inválidos.');
+                        passwordField.addClass('error-field');
+                    }
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                }
+            });
+        });
+    });
+</script>
+
+{% endblock %}

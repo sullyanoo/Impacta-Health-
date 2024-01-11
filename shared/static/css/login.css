@@ -1,0 +1,143 @@
+/* login.css */
+/* Estilos para o formulário de login */
+.registration-form {
+    background-color: #ffffff;
+    color: #333;
+    width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 50px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form h2 {
+    text-align: center;
+    color: #007BFF;
+}
+
+/* Estilos para grupos de formulários (campos, labels e selects) */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Estilo para campos de formulário quando estão selecionados */
+.form-group input:focus,
+.form-control:focus,
+.form-select:focus {
+    border: 2px solid #007BFF;
+    outline: none;
+}
+
+/* Estilo para a seleção de texto dentro dos campos */
+.form-group input::selection,
+.form-control::selection,
+.form-select::selection {
+    background-color: #007BFF;
+    color: white;
+}
+
+/* Estilos para campos de formulário, botões e selects */
+.form-group input,
+.form-control,
+.btn-primary,
+.form-select {
+    display: block;
+    width: 93%;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+    margin-bottom: 10px;
+}
+
+.small-text {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.signup-link {
+    color: #007bff;
+}
+
+.error-feedback {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+.error-field {
+    border: 1px solid red;
+}
+
+/* Estilo para mensagens de erro */
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 80%;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+/* CSS para o botão de enviar */
+.boxed-btn3 {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Efeito de hover para o botão */
+.boxed-btn3:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Estilos para o cabeçalho H2 */
+h2 {
+    color: #007BFF;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Animação de shake para campos com erro */
+.error-shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80%,
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+/* Estilo para campos com erro */
+.error-field {
+    border: 1px solid red;
+}
+
+/*

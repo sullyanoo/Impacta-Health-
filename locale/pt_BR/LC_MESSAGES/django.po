@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-10 21:34-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: users/enums.py:12
+msgid "PSYCHOLOGY"
+msgstr "Psicologia"
+
+#: users/enums.py:12
+msgid "Psicologia"
+msgstr ""
+
+#: users/enums.py:13
+msgid "NEUROLOGIST"
+msgstr "Neurologista"
+
+#: users/enums.py:13
+msgid "Neurologista"
+msgstr ""
+
+#: users/enums.py:14
+msgid "PEDIATRICIAN"
+msgstr "Pediatra"
+
+#: users/enums.py:14
+msgid "Pediatra"
+msgstr ""
+
+#: users/enums.py:15
+msgid "DENTISTRY"
+msgstr "Odontologia"
+
+#: users/enums.py:15
+msgid "Odontologia"
+msgstr ""
+
+#: users/enums.py:16
+msgid "OPHTHALMOLOGIST"
+msgstr "Oftalmologista"
+
+#: users/enums.py:16
+msgid "Oftalmologista"
+msgstr ""
+
+#: users/enums.py:17
+msgid "GENERAL_PRACTITIONER"
+msgstr "Clínico Geral"
+
+#: users/enums.py:17
+msgid "Clínico Geral"
+msgstr ""
