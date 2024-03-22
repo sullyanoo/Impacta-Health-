@@ -1,6 +1,5 @@
 # Impacta Health Repository
 
-![CI-Status](https://github.com/Felipe007Guimaraes/Impacta-Health/actions/workflows/django.yml/badge.svg)
 [![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-908a85?logo=gitpod)](https://gitpod.io/#https://github.com/Felipe007Guimaraes/Impacta-Health.git)
 ![GitHub](https://img.shields.io/github/license/Felipe007Guimaraes/Impacta-Health)
 ![Static Badge](https://img.shields.io/badge/framework-Django%20v4.2.4-1035fd)
